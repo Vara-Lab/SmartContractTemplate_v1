@@ -4,12 +4,10 @@ use gstd::{ prelude::*, ActorId };
 use gmeta::{InOut,Metadata};
 
 
-#[derive(Encode, Decode, TypeInfo, Hash, PartialEq, PartialOrd, Eq, Ord, Clone, Copy, Debug)]
+#[derive(Default, Encode, Decode, Clone, TypeInfo)]
 pub struct CustomStruct {
-
-    Example
-
-    // Add data
+    example: String,
+   
 }
 
 #[derive(Encode, Decode, TypeInfo, Hash, PartialEq, PartialOrd, Eq, Ord, Clone, Copy, Debug)]
