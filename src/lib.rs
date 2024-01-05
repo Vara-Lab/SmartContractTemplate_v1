@@ -77,8 +77,7 @@ fn handle_state() -> Result<()> {
     extern "C" fn state() {
 
         // We create a state variable.
-        let state: <ContractMetadata as Metadata>::State =
-            state_mut().iter().map(|(k, v)| (*k, *v)).collect();
+        let state: Vec<_>  = state_mut().iter().map(|(k, v)| (*k, *v)).collect();
          
         // Generate response message
         msg::reply(state, 0).expect("failed to encode or reply from `state()`");
