@@ -1,7 +1,7 @@
 
 #![no_std]
 use gstd::{ prelude::*, ActorId };
-use gmeta::{InOut,Metadata};
+use gmeta::{InOut,Out,Metadata};
 
 
 #[derive(Default, Encode, Decode, Clone, TypeInfo)]
@@ -25,6 +25,9 @@ pub enum  Event {
 }
 
 
+
+
+
 pub struct ContractMetadata;
 
 
@@ -34,6 +37,6 @@ impl Metadata for ContractMetadata{
      type Others = ();
      type Reply=();
      type Signal = ();
-     type State = Vec<(ActorId, u128)>;
+     type State = Out<Vec<(ActorId, u128)>>;
 
 }
